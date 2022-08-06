@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "shell.h"
 
 /**
  * _prompt - diplay prompt
@@ -6,5 +6,5 @@
 
 void _prompt(void)
 {
-	printf("MY_SHELL : ");
+	_puts(PROMPT);
 }
