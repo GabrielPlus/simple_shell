@@ -1,81 +1,43 @@
-.TH man "6 April 2021" "simple_shell man page"
+.TH man 1 "16 Nov 2022" "0.1" "simple_shell man page"
 
 .SH NAME
-simple_shell - takes command from user input into prompt 
-and does what the user need to do
+.B simple_shell
+- Simple shell create in C to interact with a linux operating system.
 
-.SH SYNONPSIS
-.B simple_shell 
-[command_string | file] [options]
+.SH SYNOPSIS
+ hsh [options] [file]
 
 .SH DESCRIPTION
-.B simple_shell 
-is a command language interpreter 
-that executes commands read from the standard input or from a file.
+Shell is a UNIX term for the interactive user interface with an operating system. The shell is the layer of programming that understands
+and executes the commands a user enters. In some systems, the shell is called a command interpreter. A shell usually implies an interface
+with a command syntax 
 
-.SH ARGUMENTS
-If arguments remain after option processing the first argument 
-is assumed to be the name of a file containing shell commands.
-simple_shell reads and executes commands from this file, then exit.
-simple_shell exit status is the exit status of the last command executed
- in the script. If not commands are executed, the exit status is '\n'.
-The executed files are always found in the PATH.
+.B Overview
 
-.SH DEFINITIONS
-The following definitions are used throughout the rest of this document.
-.P
-.B blank  
-A space or a tab.
-.P
-.B word
-A sequence of characters considered as a single unit by the simple_shell.
-also known as 
-.B token.
-.P
-.B name
-A word consisting only of alphanumeric characters and underscores,
-and beginning with an alphabetic character or an underscore.
-Also referred to as an 
-.B identifier.
+The simple shell is a command that reads lines from either a file or the terminal, interprets them, and generally executes other commands. It is the program that is started when a user logs into the system. It incorporates many features to aid interactive use and has the advantage that the interpretative language is common to both interactive and non-interactive use (shell scripts). That is, commands can be typed directly to the running simple shell or can be put into a file, which can be executed directly by the simple shell.
+.SH Return Value
 
-.SH SIMPLE_SHELL GRAMMAR
-.B Simple Commands
-A simple command is a sequence of optional variable assignments followed by
-blank-separated words and redirections, and terminated by a control operator.
-The first word specifies the command to be executed, and is passed as
-argument zero.  The remaining words are passed as arguments to the invoked
-command.
+Always 0 for success, other number means failure.
 
-.SH COMMAND EXECUTION
-After a command has been split into words, if it results in a simple
-command and an optional list of arguments, the following actions are taken.
+.SH PATH
 
-.SH EXAMPLES
-.br
-ls /directory/directory
-.br
-cd directory/
-.br
-cd ../..
-.br
-exit(0);
-.br
-Ctrl+D
-.br
+It will look inside al directions in PATH env variable for executable.
 
-.B OUTPUT
-print file and directories in the wanted directory.
-.br
-goes into the wanted directory.
-.br
-goes backward of two directories.
-.br
-exit the program and print 0.
-.br
-exit program.
+.SH
 
-.SH AUTHORS
-.br
-.B Adrien Millot : 2701@holbertonschool.com
-.br
-.B Alrick Deperiers : 2794@holbertonschool.com
+.SH OPTIONS
+.B simple_shell
+Command options will be typed after the main command followed by a space and a
+ '-' symbol.
+
+.SH EXAMPLE
+
+[command] [options]
+$ ls -l
+
+.SH BUGS
+Single space required after argument.
+
+
+.SH AUTHOR
+Godswill Kalu, Vatalis Ibeh.
